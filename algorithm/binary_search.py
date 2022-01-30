@@ -17,3 +17,18 @@ def binary_search():
 
 ans = binary_search()
 print(ans)
+
+
+def binary_search_duplicate(array, target):
+    # if target are dupliated, then we return left most index.
+    l, r = 0, len(array) - 1
+    while l < r:
+        m = (l+r)//2
+        if array[m] < target:
+            l = m + 1
+        else:
+            r = m
+    return l
+
+binary_search_duplicate([5,6,8,8,8,9,9,11], 10) # idx = 7
+binary_search_duplicate([5,6,8,8,8,9,9,11], 9) # idx = 5
