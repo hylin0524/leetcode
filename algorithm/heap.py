@@ -1,4 +1,6 @@
 import heapq
+
+from numpy import arange
 ''' 
 Scenario:
     1. used to sort
@@ -58,4 +60,21 @@ value: 9 | key: 1
 value: 12 | key: 4
 value: 59 | key: 3
 value: 100 | key: 0
+'''
+
+# find k largest element
+def k_largest(array, k):
+    heapq.heapify(array)
+
+    # k = len(array) - k + 1
+    print(k)
+    while array:
+        if len(array) == k:
+            return heapq.heappop(array)
+        heapq.heappop(array)
+        
+ans = k_largest([100,9,3,59,12], 2)
+print(ans) 
+'''
+output: 59
 '''
